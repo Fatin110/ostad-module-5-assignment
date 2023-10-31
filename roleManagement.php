@@ -8,22 +8,6 @@ if ($_SESSION['role'] != 'admin') {
 }
 
 $fileName = "users.txt";
-$email = filter_input(INPUT_POST,"email", FILTER_SANITIZE_STRING);
-$name = filter_input(INPUT_POST,"name", FILTER_SANITIZE_STRING);
-$role = filter_input(INPUT_POST,"roles", FILTER_SANITIZE_STRING);
-
-if (isset($_POST["update"])) {
-    $role = $_POST["roles"];
-    $name = $_POST["name"];
-    $email = $_POST["email"];
-
-    
-
-}
-
-
-
-
 $fp = fopen("users.txt", "r");
 
         while ($data = fgetcsv($fp)) {
